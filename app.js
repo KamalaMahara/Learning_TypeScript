@@ -37,4 +37,32 @@ console.log(mixedArray);
 var role = [1, "admin"];
 console.log(role); //fixed length and fixed data types
 role.push("user");
-console.log(role);
+console.log(role); //but not recommended
+//enum
+var Status;
+(function (Status) {
+    Status[Status["Active"] = 0] = "Active";
+    Status[Status["Inactive"] = 1] = "Inactive";
+    Status[Status["Pending"] = 2] = "Pending";
+})(Status || (Status = {}));
+var userStatus = Status.Active;
+console.log(userStatus);
+var user1 = {
+    id: 1,
+    name: "kmla",
+    age: 90,
+};
+console.log(user1);
+var Roles;
+(function (Roles) {
+    Roles["Designer"] = "designer";
+    Roles["Developer"] = "developer";
+})(Roles || (Roles = {}));
+var emp1 = {
+    id: 2,
+    name: "kamlaa",
+    age: 34,
+    role: Roles.Developer,
+    salary: 50000
+};
+var myage = 345;

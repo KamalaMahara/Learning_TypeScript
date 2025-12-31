@@ -49,4 +49,49 @@ console.log(role); //fixed length and fixed data types
 role.push("user");
 console.log(role); //but not recommended
 
+//enum
+enum Status {
+  Active,
+  Inactive,
+  Pending,
+}
+let userStatus: Status = Status.Active;
+console.log(userStatus);
+
+//interface
+
+interface UserDetails {
+  id: Number,
+  name: String,
+  age: Number,
+  gmail?: String | Number    //optional proprty
+}
+let user1: UserDetails = {
+  id: 1,
+  name: "kmla",
+  age: 90,
+
+}
+console.log(user1);
+
+enum Roles {
+  Designer = "designer",
+  Developer = "developer"
+}
+interface employee extends UserDetails {
+  role: Roles,
+  salary: Number
+}
+let emp1: employee = {
+  id: 2,
+  name: "kamlaa",
+  age: 34,
+  role: Roles.Developer,
+  salary: 50000
+}
+
+//type
+type age = number;
+let myage: age = 345;
+
 
