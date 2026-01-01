@@ -94,4 +94,45 @@ let emp1: employee = {
 type age = number;
 let myage: age = 345;
 
+//function
+function add(a: number, b: number): number {
+  return a + b;
+}
+console.log(add(123, 32));
+function logMessage(message: String): void {
+  console.log(message);
+}
+logMessage("hhello worldd");
+
+//function signature | arrow function
+let multiply = (x: number, y: number): number => {
+  return x * y;
+}
+console.log(multiply(23, 43));
+
+//Generics in functions
+
+function details<T, U>(id: T, name: U): void {
+  console.log(`ID: ${id}, Name:${name}`);
+}
+details<number, string>(1, "kmla");
+details<string, string>("2", "mahara");
+
+//generics in interface 
+interface userDetails<T, U> {
+  id: T
+  name: U,
+
+}
+let use1: userDetails<number, string> = {
+  name: "kmla",
+  id: 1
+}
+console.log(use1);
+
+let user2: userDetails<string, string> = {
+  name: "pr",
+  id: "3"
+}
+console.log(user2);
 
