@@ -136,3 +136,13 @@ let user2: userDetails<string, string> = {
 }
 console.log(user2);
 
+//OOP IN TS
+//class
+class Person {
+  name: String;
+  age: Number;
+  constructor(name: String, age: Number) {
+    this.name = name;
+    this.age = age;
+  }
+}
