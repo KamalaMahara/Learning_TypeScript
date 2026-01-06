@@ -146,3 +146,70 @@ class Person {
     this.age = age;
   }
 }
+let user = new Person("kmla", 43);
+console.log(user);
+
+//inheritance
+class Animal {
+  constructor(public name: string) {
+    this.name = name;
+  }
+  eat() {
+    console.log(`${this.name} is eating`);
+  }
+}
+class Cat extends Animal {
+  constructor(name: string) {
+    super(name);
+  }
+  meow() {
+    console.log(`${this.name} says meoooooooooow`);
+  }
+}
+let cat1 = new Cat("guddu");
+cat1.eat();
+cat1.meow();
+
+let animal = new Animal("lion");
+animal.eat();
+
+//acess modifiers
+class BanckAccount {
+  private accountNumber: string;
+  protected balance: number;
+  public owner: string;
+
+  constructor(accountNumber: string, balance: number, owner: string
+  ) {
+    this.accountNumber = accountNumber;
+    this.balance = balance;
+    this.owner = owner;
+  }
+  deposit(amount: number): void {
+    this.balance += amount;
+    console.log(`Deposited ${amount}. New balance is ${this.balance}`);
+  }
+
+}
+
+class DematAccount extends BanckAccount {
+  constructor(accountNumber: string, balance: number, owner: string, public accountType: string, public brokerName: string) {
+    super(accountNumber, balance, owner);
+    this.accountType = accountType;
+    this.brokerName = brokerName;
+  }
+  getDetails(): void {
+    console.log(`Account Owner: ${this.owner}, Balance: ${this.balance}, Account Type: ${this.accountType}, Broker Name: ${this.brokerName}`);
+    // account number is private so cant acess 
+  }
+}
+let dmat = new DematAccount("1234567890", 50000, "kmla", "Equity", "ABC Brokers");
+dmat.deposit(15000);
+dmat.getDetails();
+
+let bankAcc = new BanckAccount("0987654321", 100000, "mahara");
+bankAcc.deposit(25000);
+
+// encapsulation :- yesle data lae hide garxa private r protected access modifier use garera
+
+//abstraction :- yesle details hide garxa yanaki business logic lae hide garxa r user lae chahine part matra dekhauxa aru unnecessaery part haeu hide garxa.unnecessary matlab user lae tyo logic kei chahidaina.
